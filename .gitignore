@@ -1,0 +1,45 @@
+# Environment
+.env
+.venv/
+.venv_py314_backup/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Keras models (large binary)
+*.keras
+*.h5
+
+# Research papers & documentation artifacts (not needed for runtime)
+RP/
+paper.tex
+kisanai_ieee_paper.tex
+IEEE-APR25-Plant_Leafmodel*.pdf
+
+# Generated plots & screenshots (can be regenerated via scripts)
+training_loss.png
+training_accuracy.png
+confusion_matrix.png
+per_class_accuracy.png
+pip.png
+IMG_20260328_003712.png
+
+# Error logs
+error.txt
