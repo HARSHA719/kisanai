@@ -1,4 +1,5 @@
 import os
+import certifi
 from pymongo import MongoClient
 
 # Default to creating a local kisanai DB if MongoDB URI is missing
@@ -9,7 +10,7 @@ client = None
 def get_db():
     global client
     if client is None:
-        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000, tlsCAFile=certifi.where())
     # Return the target database 'kisanai' regardless of URI format
     return client["kisanai"]
     
