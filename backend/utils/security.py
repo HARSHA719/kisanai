@@ -3,7 +3,9 @@ from datetime import datetime, timedelta, timezone
 from passlib.context import CryptContext
 import jwt
 
-SECRET_KEY = os.getenv("JWT_SECRET", "super-secret-kisanai-key-2026")
+SECRET_KEY = os.getenv("JWT_SECRET")
+if not SECRET_KEY:
+    raise ValueError("❌ JWT_SECRET not set! Add it to your .env file.")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7 # 7 days validity
 
